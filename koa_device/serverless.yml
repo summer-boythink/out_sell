@@ -1,0 +1,33 @@
+org: '1304695318'
+app: out-sell-node
+stage: prod
+component: koa
+name: koa-PSWpDJ3Fw
+inputs:
+  src:
+    src: ./
+    exclude:
+      - .env
+      - node_modules/**
+  entryFile: app.js
+  region: ap-guangzhou
+  runtime: Nodejs10.15
+  sourceCosInfo:
+    bucket: sp-ins-prod-1300963013
+    region: ap-guangzhou
+    key: 9ffbc96e-11ca-4d5c-ab1b-b7e2787160a3.zip
+  isAutoCiDeploy: false
+  functionConf:
+    eip: false
+    timeout: 3
+    memorySize: 128
+  apigatewayConf:
+    serviceTimeout: 60
+    autoCreateDns: false
+    protocols:
+      - http
+      - https
+    environment: release
+  layers:
+    - name: '${output:${stage}:${app}:out-sell-node-layer.name}'
+      version: '${output:${stage}:${app}:out-sell-node-layer.version}'

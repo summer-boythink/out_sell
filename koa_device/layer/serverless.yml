@@ -1,0 +1,13 @@
+org: '1304695318'
+app: out-sell-node
+stage: prod
+component: layer
+name: out-sell-node-layer
+inputs:
+  name: out-sell-node-layer
+  region: ap-guangzhou
+  src:
+    src: ../node_modules
+    targetDir: /node_modules
+  runtimes:
+    - Nodejs10.15
